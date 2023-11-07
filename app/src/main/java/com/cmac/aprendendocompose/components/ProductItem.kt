@@ -1,6 +1,5 @@
 package com.cmac.aprendendocompose.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,14 +24,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.cmac.aprendendocompose.R
 import com.cmac.aprendendocompose.extensions.toBrazilianCurrency
 import com.cmac.aprendendocompose.model.Product
 import com.cmac.aprendendocompose.ui.theme.Purple500
 import com.cmac.aprendendocompose.ui.theme.Teal200
 import java.math.BigDecimal
+
 
 @Composable
 fun ProductItem(product: Product) {
@@ -61,15 +63,17 @@ fun ProductItem(product: Product) {
                         )
                     )
             ) {
-                Image(
-                    painter = painterResource(id = product.image),
-                    contentDescription = "Imagem do item",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
+                AsyncImage(
+                    // TODO: ajustar imagem do produto
+                    model = product.image,
+                    contentDescription = null,
+                    Modifier
                         .size(imageSize)
                         .offset(y = imageSize / 2)
-                        .clip(CircleShape)
-                        .align(Alignment.BottomCenter)
+                        .clip(shape = CircleShape)
+                        .align(Alignment.BottomCenter),
+                    contentScale = ContentScale.Crop,
+                    placeholder = painterResource(id = R.drawable.placeholder),
                 )
             }
             Spacer(modifier = Modifier.height(imageSize / 2))
@@ -117,9 +121,8 @@ fun ProductItem(product: Product) {
 private fun ProductItemPreview() {
     ProductItem(
         Product(
-            name = "teste",
-            price = BigDecimal(30),
-            image = R.drawable.ic_launcher_background
+            name = LoremIpsum(50).values.first(),
+             price = BigDecimal("14.99")
         )
     )
 }

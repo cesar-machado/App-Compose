@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import com.cmac.aprendendocompose.SampleData.sampleSections
 import com.cmac.aprendendocompose.ui.screens.HomeScreen
 import com.cmac.aprendendocompose.ui.theme.AprendendoComposeTheme
 
@@ -23,7 +24,7 @@ fun App() {
     AprendendoComposeTheme {
         // A surface container using the 'background' color from the theme
         Surface(color = MaterialTheme.colorScheme.background) {
-            HomeScreen()
+            HomeScreen( sampleSections)
         }
     }
 }
