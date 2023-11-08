@@ -37,21 +37,25 @@ import java.math.BigDecimal
 
 
 @Composable
-fun ProductItem(product: Product) {
+fun ProductItem(
+    product: Product,
+    modifier: Modifier = Modifier
+) {
     Surface(
-        shape = RoundedCornerShape(15.dp),
-        shadowElevation = 4.dp
 
-    ) {
+        shape = RoundedCornerShape(15.dp),
+        shadowElevation = 4.dp,
+
+        ) {
         Column(
-            modifier = Modifier
+            modifier
                 .height(250.dp)
                 .width(200.dp)
 //                .verticalScroll(rememberScrollState())
         ) {
             val imageSize = 100.dp
             Box(
-                modifier = Modifier
+                modifier
                     .height(imageSize)
                     .fillMaxWidth()
                     .background(
@@ -67,7 +71,7 @@ fun ProductItem(product: Product) {
                     // TODO: ajustar imagem do produto
                     model = product.image,
                     contentDescription = null,
-                    Modifier
+                    modifier
                         .size(imageSize)
                         .offset(y = imageSize / 2)
                         .clip(shape = CircleShape)
@@ -76,9 +80,9 @@ fun ProductItem(product: Product) {
                     placeholder = painterResource(id = R.drawable.placeholder),
                 )
             }
-            Spacer(modifier = Modifier.height(imageSize / 2))
+            Spacer(modifier.height(imageSize / 2))
             Column(
-                modifier = Modifier.padding(start = 16.dp, bottom = 20.dp, end = 16.dp)
+                modifier.padding(start = 16.dp, bottom = 20.dp, end = 16.dp)
             ) {
                 Text(
                     text = product.name,
@@ -122,7 +126,7 @@ private fun ProductItemPreview() {
     ProductItem(
         Product(
             name = LoremIpsum(50).values.first(),
-             price = BigDecimal("14.99")
+            price = BigDecimal("14.99")
         )
     )
 }
