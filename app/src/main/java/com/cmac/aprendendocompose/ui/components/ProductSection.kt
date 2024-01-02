@@ -1,4 +1,4 @@
-package com.cmac.aprendendocompose.components
+package com.cmac.aprendendocompose.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

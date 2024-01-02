@@ -19,9 +19,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.cmac.aprendendocompose.SampleData.sampleProducts
 import com.cmac.aprendendocompose.SampleData.sampleSections
-import com.cmac.aprendendocompose.components.CardProductItem
-import com.cmac.aprendendocompose.components.ProductSection
-import com.cmac.aprendendocompose.components.SearchTextField
+import com.cmac.aprendendocompose.ui.components.CardProductItem
+import com.cmac.aprendendocompose.ui.components.ProductSection
+import com.cmac.aprendendocompose.ui.components.SearchTextField
 import com.cmac.aprendendocompose.model.Product
 
 @OptIn(ExperimentalMaterial3Api::class)

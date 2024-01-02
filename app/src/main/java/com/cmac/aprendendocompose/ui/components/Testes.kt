@@ -1,4 +1,4 @@
-package com.cmac.aprendendocompose.components
+package com.cmac.aprendendocompose.ui.components
 
 //@Composable
 //fun ProductItem(withDescription: Boolean = false, content: String? = null) {
